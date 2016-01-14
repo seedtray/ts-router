@@ -34,11 +34,8 @@ export abstract class Optional<T> {
 }
 
 class Present<T> extends Optional<T> {
-    private _value:T;
-
-    constructor(value:T) {
+    constructor(private value:T) {
         super();
-        this._value = value;
     }
 
     isPresent():boolean {
@@ -46,11 +43,11 @@ class Present<T> extends Optional<T> {
     }
 
     get():T {
-        return this._value;
+        return this.value;
     }
 
     or(defaultValue:T):T {
-        return this._value;
+        return this.value;
     }
 
     orOptional<U extends T>(secondChoice:Optional<U>):Optional<T> {
@@ -58,11 +55,11 @@ class Present<T> extends Optional<T> {
     }
 
     orNull():T {
-        return this._value;
+        return this.value;
     }
 
     asArray():Array<T> {
-        return [this._value];
+        return [this.value];
     }
 
     toString() {
