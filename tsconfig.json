@@ -1,6 +1,23 @@
 {
-  "compilerOptions": {
-    "noImplicitAny": true,
-    "sourceMap": true
-  }
+    "compilerOptions": {
+        "target": "es5",
+        "declaration": true,
+        "module": "amd",
+        "moduleResolution": "classic",
+        "isolatedModules": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "lib/"
+    },
+    "filesGlob": [
+        "src/**/*.ts",
+        "tests/**/*.ts"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": false
 }

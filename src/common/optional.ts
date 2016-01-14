@@ -1,8 +1,6 @@
-///<reference path="preconditions.ts"/>
+import {checkNotNull} from "./preconditions";
 
-import checkNotNull = Preconditions.checkNotNull;
-
-abstract class Optional<T> {
+export abstract class Optional<T> {
 
     static absent<T>():Optional<T> {
         return Absent.INSTANCE;
@@ -26,8 +24,6 @@ abstract class Optional<T> {
     abstract get():T
 
     abstract or(defaultValue:T):T
-
-    abstract orProvider<U extends T>(provider:() => U):Optional<T>
 
     abstract orOptional<U extends T>(secondChoice:Optional<U>):Optional<T>
 
@@ -61,10 +57,6 @@ class Present<T> extends Optional<T> {
         return this;
     }
 
-    orProvider<U extends T>(provider:() => U):Optional<T> {
-        return this;
-    }
-
     orNull():T {
         return this._value;
     }
@@ -95,20 +87,12 @@ class Absent<T> extends Optional<T> {
         return secondChoice;
     }
 
-    orProvider<U extends T>(provider:() => U):Optional<T> {
-        return Optional.fromNullable(provider());
-    }
-
     orNull():any {
         return null;
     }
 
     asArray():Array<any> {
         return [];
-    }
-
-    toString() {
-        return "Absent optional"
     }
 
     static INSTANCE:Absent<any> = new Absent();

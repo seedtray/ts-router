@@ -1,0 +1,38 @@
+{
+  "name": "ts-router",
+  "version": "1.0.0",
+  "description": "Url router",
+  "main": "lib/index.ts",
+  "typings": "lib/index",
+  "files": "lib/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seedtray/ts-router.git"
+  },
+  "author": "Rafael Darder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seedtray/ts-router/issues"
+  },
+  "homepage": "https://github.com/seedtray/ts-router#readme",
+  "dependencies": {
+    "es6-collections": "^0.5.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-tslint": "^4.2.2",
+    "gulp-typedoc": "^1.2.1",
+    "gulp-typescript": "^2.10.0",
+    "intern": "^3.0.6",
+    "jasmine": "^2.4.1",
+    "remap-istanbul": "^0.5.1",
+    "ts-npm-lint": "^0.1.0",
+    "tsd": "^0.6.5",
+    "tslint": "^3.2.1",
+    "typescript": "^1.7.5"
+  }
+}
